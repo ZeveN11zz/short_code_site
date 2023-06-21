@@ -1,0 +1,26 @@
+{% extends 'shortlink/index.html' %}
+{% load static %}
+
+{% block content %}
+<div class="card">
+    <h2>Сервис для сокращения ссылок</h2>
+    <form method="POST" action="" class="card__form">
+        {% csrf_token %}
+        {{form.url}}
+        {{form.stop_count}}
+        {{form.stop_date}}
+        <button type="submit">
+            Сократить ссылку!
+        </button>
+    </form>
+</div>
+<p class="description">
+    "Кол-во переходов" и "Дата окончания" - это условия, при которых ссылка будет отключена.
+    <br>
+    Если оставить пустыми - ссылка будет работать вечно. 
+</p>
+{% endblock content %}
+
+{% block endbody %}
+<script src="{% static 'shortlink/js/validators.js' %}"></script>
+{% endblock endbody %}

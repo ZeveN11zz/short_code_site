@@ -1,0 +1,12 @@
+{% extends 'shortlink/index.html' %}
+{% load static %}
+
+{% block content %}
+<h3 class="error-code">
+    404
+</h3>
+{% endblock content %}
+
+{% block endbody %}
+<script src="{% static 'shortlink/js/validators.js' %}"></script>
+{% endblock endbody %}

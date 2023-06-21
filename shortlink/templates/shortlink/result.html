@@ -1,0 +1,10 @@
+{% extends 'shortlink/index.html' %}
+
+{% block content %}
+<div class="card">
+    <h3>Ваша сокращенная ссылка:</h3>
+    <p>
+        <a href="http://{{ request.get_host }}/{{result_link.short_code}}" target="_blank" rel="noopener noreferrer">{{ request.get_host }}/{{result_link.short_code}}</a>
+    </p>   
+</div>
+{% endblock content %}
